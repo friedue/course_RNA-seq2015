@@ -1,4 +1,6 @@
-# RNA-seq course by Applied Bioinformatics Core, WCMC
+# RNA-seq course
+
+__Applied Bioinformatics Core, WCMC__
 
 Here, you can find some additional scripts that go beyond the course notes. 
 
