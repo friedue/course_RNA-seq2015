@@ -1,8 +1,8 @@
-# RNA-seq course
+# RNA-seq course 2015
 
 __Applied Bioinformatics Core, WCMC__
 
-Here, you can find some additional scripts that go beyond the course notes. 
+Here, you can find some additional scripts that go beyond the course notes and show you how some of the images were produced.
 
 ### 1. Visualize the STAR alignment information (advanced R)
 
@@ -21,3 +21,14 @@ You can find all the functions and commands used to:
 This is a simpler exercise than the STAR log file visualization.
 
 If you want to reproduce the figure 02_barplot_readDistributions.png, download the .txt files from the folder 02_readDistribution_input and carry out the steps detailed in the .R script.
+
+
+### 3. Visualize the relationship between mRIN (TIN) and the experimentally determined RIN
+
+This, too, is a very simple R exercise to reproduce figure 03_boxplots_TIN.png
+
+RSeQC's TIN module was run on 4 different BAM files, each obtained from human RNA-seq experiments where the RNA quality was deliberately modified to generate RINs of low (0), medium and high (9) quality.
+In principle, the _in silico_ determined TIN score should correlate very well with the original RIN.
+
+RSeQC's output files are xls files, which you can find in the respective folder.
+Download those files into your working directory as well as the `.R` script and have a go at the boxplots.

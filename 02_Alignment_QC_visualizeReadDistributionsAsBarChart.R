@@ -1,5 +1,9 @@
-## get output of RSeQC's read_distribution.py
-## to run this script as is, save the example .txt files in your current working directory
+## Turn the output of RSeQC's read_distribution.py run on multiple samples
+## into a bar chart
+#############################################################################
+## to run this script as is, save the example .txt files (from the folder readDistribution_input)
+## in your current working directory
+##############################################################################
 
 ## get all file names
 files <- list.files(pattern = "readDistribution_UHR", full.names = TRUE)
