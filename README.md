@@ -4,6 +4,8 @@ __Applied Bioinformatics Core, WCMC__
 
 Here, you can find some additional scripts that go beyond the course notes and show you how some of the images were produced.
 
+[return to course material website at WCMC](http://chagall.med.cornell.edu/RNASEQcourse/)
+
 ### 1. Visualize the STAR alignment information (advanced R)
 
 We aligned 2x48 yeast samples (2 conditions: WT and SNF2) and wanted to compare the results of the STAR alignment across all 96 samples.
@@ -35,3 +37,5 @@ In principle, the _in silico_ determined TIN score should correlate very well wi
 
 RSeQC's output files are `.xls` files, which you can find in the respective folder.
 Download those files into your working directory as well as the `.R` script and have a go at the boxplots.
+
+[return to course material website at WCMC](http://chagall.med.cornell.edu/RNASEQcourse/)
