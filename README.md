@@ -7,7 +7,7 @@ Here, you can find some additional scripts that go beyond the course notes and s
 ### 1. Visualize the STAR alignment information (advanced R)
 
 We aligned 2x48 yeast samples (2 conditions: WT and SNF2) and wanted to compare the results of the STAR alignment across all 96 samples.
-The result can be seen in the pdf file, which can be recreated by running the `01_Alignment_visualizeSTARresults.Rmd` file, for example using RStudio.
+The result can be seen in the [pdf file](https://github.com/friedue/course_RNA-seq2015/blob/master/01_Alignment_visualizeSTARresults.pdf), which can be recreated by running the `01_Alignment_visualizeSTARresults.Rmd` file, for example using RStudio.
 You can find all the functions and commands used to:
 
 * read in the STAR log file
