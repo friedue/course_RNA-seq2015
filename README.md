@@ -1,8 +1,6 @@
-# RNA-seq course 2015
-
-__Applied Bioinformatics Core, WCMC__
-
 ![](https://raw.githubusercontent.com/friedue/course_RNA-seq2015/master/wcmc_abc_logo.png)
+
+# RNA-seq course 2015
 
 Here, you can find some additional scripts that go beyond the course notes and show you how some of the images were produced.
 
