@@ -2,6 +2,8 @@
 
 __Applied Bioinformatics Core, WCMC__
 
+![](https://raw.githubusercontent.com/friedue/course_RNA-seq2015/master/wcmc_abc_logo.png)
+
 Here, you can find some additional scripts that go beyond the course notes and show you how some of the images were produced.
 
 [return to course material website at WCMC](http://chagall.med.cornell.edu/RNASEQcourse/)
