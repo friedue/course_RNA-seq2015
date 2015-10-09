@@ -2,7 +2,7 @@
 
 # RNA-seq course 2015
 
-Here, you can find some additional scripts that go beyond the course notes and show you how some of the images were produced.
+Here, you can find some additional scripts that go beyond the [course notes](http://chagall.med.cornell.edu/RNASEQcourse/Intro2RNAseq.pdf) and show you how some of the images were produced.
 
 [return to course material website at WCMC](http://chagall.med.cornell.edu/RNASEQcourse/)
 
