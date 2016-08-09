@@ -2,17 +2,18 @@
 
 # RNA-seq course 2015
 
-Here, you can find some additional scripts that go beyond the [course notes](http://chagall.med.cornell.edu/RNASEQcourse/Intro2RNAseq.pdf) and show you how some of the images were produced.
+Here, you can find some additional scripts that go beyond the [course notes](http://chagall.med.cornell.edu/RNASEQcourse/Intro2RNAseq.pdf) and show you how some of the images within the report were produced.
 
 [return to course material website at WCMC](http://chagall.med.cornell.edu/RNASEQcourse/)
 
 ### 1. Visualize the STAR alignment information (advanced R)
 
-We aligned 2x48 yeast samples (2 conditions: WT and SNF2) and wanted to compare the results of the STAR alignment across all 96 samples.
-The result can be seen in the [pdf file](https://github.com/friedue/course_RNA-seq2015/blob/master/01_Alignment_visualizeSTARresults.pdf), which can be recreated by running the `01_Alignment_visualizeSTARresults.Rmd` file, for example using RStudio.
+We aligned 2x48 yeast samples (2 conditions: WT and SNF2 knockout) and wanted to compare the results of the STAR alignment across all 96 samples.
+The log files can be found in the folder [01_STAR_logs](https://github.com/friedue/course_RNA-seq2015/tree/master/01_STAR_logs).
+An example for how you could visualize the results kept within those 96 log files can be seen in the [pdf file](https://github.com/friedue/course_RNA-seq2015/blob/master/01_Alignment_visualizeSTARresults.pdf), which can be recreated by running the `01_Alignment_visualizeSTARresults.Rmd` file, for example using RStudio.
 You can find all the functions and commands used to:
 
-* read in the STAR log file
+* read in a single STAR log file
 * combine the log files for several samples
 * make data frames suitable for ggplot2 plotting
 * combine various ggplot2 figures into one image
