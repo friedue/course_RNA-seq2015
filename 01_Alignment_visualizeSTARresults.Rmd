@@ -6,7 +6,7 @@ output: pdf_document
 This report was generated with \textsf{R} and the help of the \texttt{knitR} package.
 
 The data set used here contains mRNA from 48 replicates of two \textit{S. cerevisiae} populations: wildtype and \textit{snf2} knock-out mutants.
-All 96 samples were sequenced on one flow cell (Illumina HiSeq 2000)
+All 96 samples were sequenced on one flow cell (Illumina HiSeq 2000).
 The SRA accession number for the entire data set (consisting of 2 x 48 samples) is ERP004763. 
 
 \pagenumbering{gobble}
@@ -115,23 +115,26 @@ infiles <- list.files(path="01_STAR_logs/", # folder with log files
                       pattern="Log.final.out",
                       full.names = TRUE)
 
-# iterating over the file list generates a list of data frames
+# iterating over the file list with a function to read in the log files
+# generates a __list of data frames__
 align.results <- lapply(infiles, function(x)
-  read.table(x, sep="|", strip.white=TRUE, stringsAsFactor=FALSE,
-             skip=3, fill = TRUE, header = FALSE))
+                                read.table(x, sep="|", 
+                                          strip.white=TRUE,
+                                          stringsAsFactor=FALSE,
+                                          skip=3, fill = TRUE, header = FALSE) )
 typeof(align.results)
-head(align.results[[1]])
+head(align.results[[1]]) # peek into one of the data.frames within the list
 
 # removing "%" from some of the values to keep just the numeric parts
 align.results <- lapply(align.results, function(x)
-  transform(x, V2 = as.numeric(gsub("%", "", x$V2) )))
+                                        transform(x, V2 = as.numeric(gsub("%", "", x$V2) )))
 
-# some cosmetics of each data frame's name, specific for the sample names
-# of the files used here
+# some cosmetics of each data frame's name - this is specific for the sample names
+# of the files used here!
 names(align.results) <-  gsub(".*(SNF2|WT)(\\_[0-9]*).*", "\\1\\2", infiles)
 ```
 
-## Generating a long data frame for ggplot2 
+## Generating a long data frame for ggplot2-based plotting
 
 ```{r longDF}
 # concatenating all data frames of align.results
@@ -161,13 +164,15 @@ However, we don't need to visualize every entry from the \texttt{STAR} output si
 unique(align.results.df$V1)
 ```
 
-Thus, we first define those entries that we are interested in:
+Thus, we first define those QC entries that we are interested in:
 ```{r filters}
 filters = c("Number of input reads", "Uniquely mapped reads %",
             "Number of splices: Total", "Number of splices: Non-canonical")
 ```
 
-Now, let's generate some bar plots. The following chunk of code is optimized for returning a composite image with four plots and one legend. Note that the functions \texttt{PlottingAligmentResults} and \texttt{ExtractLegend} are part of the script that we sourced in the beginning.
+Now, let's generate some bar plots.
+The following chunk of code is optimized for returning a composite image with four plots and one legend.
+Note that the functions \texttt{PlottingAligmentResults} and \texttt{ExtractLegend} are part of the script that we sourced in the beginning.
 
 ```{r barPlots, fig.width = 13, fig.height = 10}
 # for each entry in "filters", generate a bar chart
@@ -186,8 +191,12 @@ grid.arrange(arrangeGrob(plots[[1]], plots[[2]], plots[[3]], plots[[4]], nrow=2)
              )
 ```
 
-The dashed black line is the median value across all replicates of one condition. There is quite a bit of variation for all four stats between the replicates. 
-Although the median sequencing depth of the SNF2 samples is slightly higher than for the WT samples, the median number of splice sites shows a reverse trend. This is counter-intuitive as the number of splice sites should correlate positively with the number of mapped reads. Let's check whether that relationship is simply confounded by just looking at the median values.
+The dashed black line is the median value across all replicates of one condition.
+There is quite a bit of variation for all four stats between the replicates. 
+
+Although the median sequencing depth of the _snf2_ ko samples is slightly higher than for the WT samples, the median number of splice sites shows a reverse trend.
+This is counter-intuitive as the number of splice sites should positively correlate with the number of mapped reads.
+Let's check whether that relationship is simply confounded by just looking at the median values.
 
 \clearpage
 __WT__
@@ -225,7 +234,7 @@ PlottingCorrelation(DF = df, Var1 = filters[3], Var2 = filters[4], Var1.Label = 
 
 In both sample types, the number of detected splice sites indeed seems to correlate with the number of input reads.
 
-Apart from that, the samples almost all aligned well (70-80% alignment rate is typically seen for RNA-seq experiments).
+Apart from that, the samples almost all aligned well (70-80% alignment rate is typically seen for normal RNA-seq experiments).
 
 For future references, let's get those samples that seem to deviate the most:
 
