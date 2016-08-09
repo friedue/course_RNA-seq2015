@@ -23,7 +23,7 @@ You can find all the functions and commands used to:
 
 This is a simpler exercise than the STAR log file visualization.
 
-If you want to reproduce the figure `02_barplot_readDistributions.png`, download the `.txt` files from the folder 02_readDistribution_input and carry out the steps detailed in the `.R` script.
+If you want to reproduce the figure `02_barplot_readDistributions.png`, download the `.txt` files from the folder [02_readDistribution_input](https://github.com/friedue/course_RNA-seq2015/tree/master/02_readDistribution_input) and carry out the steps detailed in the `.R` script.
 
 ![](https://raw.githubusercontent.com/friedue/course_RNA-seq2015/master/02_barplot_readDistributions.png)
 
@@ -33,11 +33,11 @@ This, too, is a very simple `R` exercise to reproduce figure `03_boxplots_TIN.pn
 
 ![](https://raw.githubusercontent.com/friedue/course_RNA-seq2015/master/03_boxplots_TIN.png)
 
-`RSeQC`'s TIN module was run on 4 different BAM files, each obtained from human RNA-seq experiments where the RNA quality was deliberately modified to generate RINs of low (0), medium and high (9) quality.
+`RSeQC`'s TIN module was run on 4 different BAM files, each obtained from human RNA-seq experiments where the RNA quality was deliberately modified to generate RINs of low (0), medium, and high (9) quality.
 In principle, the _in silico_ determined TIN score should correlate very well with the original RIN.
-You can read more about it in the [recent publication](http://www.ncbi.nlm.nih.gov/pubmed/26234653) of the _in silico_ RIN.
+You can read more about it in the [recent publication](http://www.ncbi.nlm.nih.gov/pubmed/26234653) of the _in silico_ RIN method.
 
-`RSeQC`'s output files are `.xls` files, which you can find in the respective folder.
+`RSeQC`'s output files are `.xls` files, which you can find in the respective [folder](https://github.com/friedue/course_RNA-seq2015/tree/master/03_mRIN_input).
 Download those files into your working directory as well as the `.R` script and have a go at the boxplots.
 
 [return to course material website at WCMC](http://chagall.med.cornell.edu/RNASEQcourse/)
